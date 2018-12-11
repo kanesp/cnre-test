@@ -32,3 +32,44 @@ void main()
   fclose(wf);
 /*****************************/
 }
+89programming exercise43
+#include <stdio.h>
+void  fun( char *a )
+{
+	char *t=a;
+	int i,j=0,m=0,n=0;
+	while(t)
+	{
+		t++;
+	m++;}
+	while(*t=='*')
+	{ t--;
+	n++;}
+	for(i=0;i<m-n;i++)
+		a[j++]=t[i];
+	a[j]='\0';
+
+
+}
+
+void main()
+{  char  s[81];void NONO ();
+   printf("Enter a string:\n");gets(s);
+   fun( s );
+   printf("The string after deleted:\n");puts(s);
+   NONO();
+}
+void NONO ()
+{/* ±¾º¯ÊýÓÃÓÚ´ò¿ªÎÄ¼þ£¬ÊäÈëÊý¾Ý£¬µ÷ÓÃº¯Êý£¬Êä³öÊý¾Ý£¬¹Ø±ÕÎÄ¼þ¡£ */
+  FILE *in, *out ;
+  int i ; char s[81] ;
+  in = fopen("in.dat","r") ;
+  out = fopen("out.dat","w") ;
+  for(i = 0 ; i < 10 ; i++) {
+    fscanf(in, "%s", s) ;
+    fun(s) ;
+    fprintf(out, "%s\n", s) ;    
+  }
+  fclose(in) ;
+  fclose(out) ;
+}
